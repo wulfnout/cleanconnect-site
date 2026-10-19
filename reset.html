@@ -32,7 +32,7 @@
   function appLink(fallback) {
     var to = new URLSearchParams(location.search).get('to') || fallback;
     // Only ever send people back into the Clean Connect app, never to other websites.
-    return /^(cleanconnect|exp|exps):\/\//i.test(to) ? to : fallback;
+    return /^((cleanconnect|exp|exps):\/\/|https:\/\/cleanconnect\.info\/)/i.test(to) ? to : fallback;
   }
   var hash = new URLSearchParams(location.hash.slice(1));
   var btn = document.getElementById('open');

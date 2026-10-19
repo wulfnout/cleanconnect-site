@@ -33,7 +33,7 @@
     var params = new URLSearchParams(location.search);
     var to = params.get('to') || 'cleanconnect://payouts-done';
     // Only ever send people back into the Clean Connect app, never to other websites.
-    if (!/^(cleanconnect|exp|exps):\/\//i.test(to)) to = 'cleanconnect://payouts-done';
+    if (!/^((cleanconnect|exp|exps):\/\/|https:\/\/cleanconnect\.info\/)/i.test(to)) to = 'cleanconnect://payouts-done';
     if (params.get('refresh')) {
       document.getElementById('title').textContent = 'That link expired';
       document.getElementById('msg').textContent = 'Go back to Clean Connect and tap the payout button again to continue.';
